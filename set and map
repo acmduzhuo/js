@@ -6,14 +6,14 @@
 // var score = [95, 75, 85];
 // var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
 // console.log(m.get('Michael'));//利用Map来形成查找索引
-var m = new Map();//对Map进行初始化
-m.set('Adam', 67);
-m.set('Bob', 59);
-console.log(m.has('Adam'));//判断‘Adam’是否在Map里
-console.log(m.get('Adam'));//查找‘Adam’在Map的位置
-m.delete('Adam');//删除‘Adam’
-console.log(m.has('Adam'));//显示false
-console.log(m.get('Adam'));//显示undefined
+// var m = new Map();//对Map进行初始化
+// m.set('Adam', 67);
+// m.set('Bob', 59);
+// console.log(m.has('Adam'));//判断‘Adam’是否在Map里
+// console.log(m.get('Adam'));//查找‘Adam’在Map的位置
+// m.delete('Adam');//删除‘Adam’
+// console.log(m.has('Adam'));//显示false
+// console.log(m.get('Adam'));//显示undefined
 // var s1 = new Set();
 // var m = new Map();
 // m.set('Adam', 67);
@@ -27,3 +27,7 @@ console.log(m.get('Adam'));//显示undefined
 // console.log(s);//添加元素4
 // s.add(4);
 // console.log(s);//重复添加无意义
+var s = new Set([1, 2, 4]);
+console.log(s);
+s.delete(4);
+console.log(s);//删除该元素
