@@ -1,0 +1,22 @@
+function abs(x){
+    if(x >= 0){
+        return x;
+    } else{
+        return -x;
+    }
+}
+// var abs = function(x){
+//     if(x >= 0){
+//         return x;
+//     } else{
+//         return -x;
+//     }
+// };//同上定义
+// console.log(abs(-9));
+// console.log(abs(-10, 'bababa'));//只对10进行操作
+//console.log(abs());//无参数，返回NaN
+function abs() {
+    if(arguments.length === 0){
+        
+    }
+}
