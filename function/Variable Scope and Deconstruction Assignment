@@ -1,0 +1,50 @@
+'use strict'
+// function foo() {
+//     var x = 1;
+//     x = x + 1;
+// }
+// x = x + 2;//报错，无法在函数外引用函数内声明的变量
+// function foo() {
+//     var x = 1;
+//     x = x + 1;
+// }
+// function foo() {
+//     var x = 'A';
+//     x = x + 'B';
+// }//两个函数内的变量，即使名称相同也互不影响
+// function foo() {
+//     var x = 1;
+//     function bar() {
+//         var y =  x + 1;
+//         console.log(y);
+//     }
+//     bar();
+//     console.log(x);
+// }
+// foo();
+// function foo() {
+//     var x = 1;
+//     function bar() {
+//         var x = 'A';
+//         console.log(`x in bar() = ${x}`);
+//     }
+//     console.log(`x in foo() = ${x}`);
+//     bar();
+// }
+// foo();
+// function foo() {
+//     var y;
+//     var x = 'Hello, ' + y;
+//     console.log(x);
+//     y = 'Bob';
+// }
+// foo();//在函数内部首先申明所有变量
+// function foo() {
+//     var
+//         x = 1,
+//         y = x + 1,
+//         z, i;//声明所有变量
+//     for(i=0; i<100; i++){
+//
+//     }
+// }
