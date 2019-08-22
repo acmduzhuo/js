@@ -38,7 +38,7 @@
 //     console.log(x);
 //     y = 'Bob';
 // }
-// foo();//在函数内部首先申明所有变量
+// foo();//在函数内部 首先 申明所有变量
 // function foo() {
 //     var
 //         x = 1,
@@ -48,3 +48,10 @@
 //
 //     }
 // }
+// var course = 'Learn JavaScript';
+// console.log(course);
+// alert(window.course);//alert显示完全等同于前者，但是console.log却不同
+// function foo() {
+//     console.log('foo');
+// }
+// foo();
