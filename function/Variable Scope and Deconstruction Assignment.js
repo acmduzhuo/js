@@ -1,4 +1,4 @@
-'use strict'
+//'use strict'
 // function foo() {
 //     var x = 1;
 //     x = x + 1;
@@ -69,9 +69,55 @@
 // MYAPP.foo = function () {
 //     return 'foo';
 // };//将全部代码放入唯一的名字空间MYAPP中，以减少全局变量冲突的可能。
-function foo() {
-    for(var i=0; i<100; i++){
-
-    }
-    i += 1;//对i的操作依然成立，因为该变量作用于函数内部
-}
+// function foo() {
+//     for(var i=0; i<100; i++){
+//
+//     }
+//     i += 1;//对i的操作依然成立，因为该变量作用于函数内部
+// }
+// function foo() {
+//     var sum = 0;
+//     for(var i=0; i<100; i++){//可以用let
+//         sum += i;
+//     }
+//     i += 1;//当引用是let报错
+//     console.log(sum);
+// }
+// foo();
+// const PI = 3.14;
+// PI = 3.11;//用const会报错，但是var却不会报错
+// console.log(PI);
+// var array = ['hello', 'JavaScript', 'ES6'];
+// var x = array[0];
+// var y = array[1];
+// var z = array[2];
+// console.log(`x = ${x}, y = ${y}, z = ${z}`);
+// var [x, [y, z]] = ['hello', ['JavaScript', 'ES6']];
+// console.log(`x = ${x}, y = ${y}, z = ${z}`);//注意嵌套一致
+// let [, , z] = ['hello', 'JavaScript', 'ES6'];
+// console.log(z);
+// var person = {
+//     name: '小明',
+//     age: 20,
+//     gender: 'male',
+//     passport: 'G-123456789',
+//     school: 'SDUT',
+//     adress: {
+//         city: 'Beijing',
+//         street: 'No.1',
+//         zipcode: '10001'
+//     }
+// };
+// var {name, adress:{city}} = person;
+// console.log(name);//解构赋值时，只需要将赋值的变量名称引用即可，注意嵌套对应
+// var {name, age, adress:{city, street}, single = true} = person;
+// console.log(name, age, single);//引用不存在变量
+// var x, y;
+// //{x, y} = {name, age};//当{开头，=失去了作用
+// ({x, y} = {name:'小明', x: 20, y:10});//必须加上（）
+// console.log(x, y);
+// var x=1, y=2;
+// [x, y] = [y, x];
+// console.log(x, y);//交换值
+//var{hostname: domain, pathname:path} = location;
+//console.log(location);//获取当前域名和页面路径，输入到console控制台
