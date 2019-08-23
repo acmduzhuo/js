@@ -55,3 +55,23 @@
 //     console.log('foo');
 // }
 // foo();
+//window.alert('调用window.alert()');
+// var old_alert = window.alert;
+// window.alert = function(){
+//     alert('无法用alert()显示了!');
+// }
+// //window.alert = old_alert;
+// alert(window.alert());
+// //alert('又可以用alert()了!');//alert()也是window的一个分量
+// var MYAPP = {};
+// MYAPP.name = 'myapp';
+// MYAPP.version = 1.0;
+// MYAPP.foo = function () {
+//     return 'foo';
+// };//将全部代码放入唯一的名字空间MYAPP中，以减少全局变量冲突的可能。
+function foo() {
+    for(var i=0; i<100; i++){
+
+    }
+    i += 1;//对i的操作依然成立，因为该变量作用于函数内部
+}
