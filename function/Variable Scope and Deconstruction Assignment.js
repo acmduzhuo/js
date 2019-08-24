@@ -121,18 +121,18 @@
 // console.log(x, y);//交换值
 //var{hostname: domain, pathname:path} = location;
 //console.log(location);//获取当前域名和页面路径，输入到console控制台
-function buildDate({year, month, day, hour=0, minute=0, second=0}) {
-    return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-}
-console.log(buildDate({year: 2020, month: 1, day: 1, hour:20, minute:15, second:10}));//正确输出，注意分隔符：-
-// function buildDate({year,month,day,hour=0,minute=0,second=0}){
-//     return new Date(year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second);
+// function buildDate({year, month, day, hour=0, minute=0, second=0}) {
+//     return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
 // }
-// var time = {};
-// time.year = 2018;
-// time.month = 1;
-// time.day = 1;
-// // time.hour = 23;
-// // time.minute = 45;
-// // time.second = 18;
-// console.log(buildDate(time));//Mon Jan 01 2018 23:45:18 GMT+0800 (中国标准时间)
+// console.log(buildDate({year: 2020, month: 1, day: 1, hour:20, minute:15, second:10}));//正确输出，注意分隔符：-
+function buildDate({year,month,day,hour=0,minute=0,second=0}){
+    return new Date(year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second);
+}
+var time = {};
+time.year = 2018;
+time.month = 1;
+time.day = 1;
+time.hour = 23;
+time.minute = 45;
+time.second = 18;
+console.log(buildDate(time));//Mon Jan 01 2018 23:45:18 GMT+0800 (中国标准时间)
