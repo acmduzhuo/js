@@ -20,14 +20,28 @@
 // };
 // console.log(xiaoming.age());//this指向的是window显示NaN
 // console.log(getAge());//显示NaN
-'use strict';
+// 'use strict';
+// var xiaoming = {
+//     name: '小明',
+//     birth: 1990,
+//     age: function () {
+//         var y = new Date().getFullYear();
+//         return y - this.year;
+//     }
+// };
+// var fn = xiaoming.age;
+// console.log(fn());//报错，在非strict模式下，它重新指向全局对象windows
+'use strict'
 var xiaoming = {
     name: '小明',
     birth: 1990,
     age: function () {
-        var y = new Date().getFullYear();
-        return y - this.year;
+        var that = this;
+        function getAgeFromBirth() {
+            var y = new Date().getFullYear();
+            return y - that.birth;
+        }
+        return getAgeFromBirth();
     }
 };
-var fn = xiaoming.age;
-console.log(fn());
+console.log(xiaoming.age());
