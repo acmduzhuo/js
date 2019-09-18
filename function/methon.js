@@ -81,4 +81,4 @@ window.parseInt = function(){
 parseInt('10');
 parseInt('20');
 parseInt('30');
-console.log('count = ' + count);
+console.log('count = ' + count);？？？？？？
