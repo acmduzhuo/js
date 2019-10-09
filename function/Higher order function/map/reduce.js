@@ -36,4 +36,9 @@ var arr = [1, 2, 3, 4, 5];
 // }
 // var sum = arr.reduce(f);
 // console.log(sum);//利用f(f(x1, x2), x3)
-
+// console.log(parseInt("11"));//11
+// console.log(parseInt("12", 36));//38第二个数表示基数，介于2~36
+// console.log(parseInt("1f",16));//31
+// console.log(parseInt("11"));//11
+// console.log(parseInt("2f",16));//2*16+15=47
+console.log(parseInt("12", 36));//2*6+2
