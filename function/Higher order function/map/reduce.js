@@ -41,4 +41,8 @@ var arr = [1, 2, 3, 4, 5];
 // console.log(parseInt("1f",16));//31
 // console.log(parseInt("11"));//11
 // console.log(parseInt("2f",16));//2*16+15=47
-console.log(parseInt("12", 36));//2*6+2
+//console.log(parseInt("22", 36));//2*36+2
+var arr = ['1', '2', '3'];
+var r;
+r = arr.map(parseInt);
+console.log(r);
