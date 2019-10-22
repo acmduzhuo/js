@@ -29,16 +29,21 @@
 //     return 0;
 // });
 // console.log(arr);
-var arr = [10, 3, 5, 6];
-arr.sort(function (x, y) {
-    if(x > y){
-        return -1;
-    }
-    else if(x < y){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-})
-console.log(arr);
+// var arr = [10, 3, 5, 6];
+// arr.sort(function (x, y) {
+//     if(x > y){
+//         return -1;
+//     }
+//     else if(x < y){
+//         return 1;
+//     }
+//     else{
+//         return 0;
+//     }
+// })
+// console.log(arr);
+var a1 = ['B', 'A', 'C'];
+var a2 = a1.sort();
+console.log(a1);
+console.log(a2);
+console.log(a1 === a2);//true
