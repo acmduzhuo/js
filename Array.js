@@ -62,6 +62,30 @@
 // var arr = [[1, 2, 3], [400, 500, 600], '-'];
 // console.log(arr[1][1]);
 'use strict';
-var arr1 = ['小明', '小红', '大军', '阿黄'];
-var arr = arr1.sort();
-console.log(`欢迎${arr[0]},${arr[1]},${arr[2]}和${arr[3]}同学！`);
+// var arr1 = ['小明', '小红', '大军', '阿黄'];
+// var arr = arr1.sort();
+// console.log(`欢迎${arr[0]},${arr[1]},${arr[2]}和${arr[3]}同学！`);
+// var arr = ['Apple', 'pear', 'orange'];
+// console.log(arr.every(function (s) {
+//     return s.length > 0;
+// }));///每个元素是否长度都大于0
+// console.log(arr.every(function (s) {
+//     return s.toLowerCase() == s;
+// }));//每个元素是否都是小写
+// var arr = [1, 2, 3, 4, 6];
+// console.log(arr.every(function (s) {
+//     return s%2;
+// }));
+// console.log(arr.find(function (s) {
+//     return s%2 == 0;
+// }));
+var arr = ['Apple', 'pear', 'orange'];
+// console.log(arr.findIndex(function (s) {
+//     return s.toLowerCase() === s;
+// }));//查找第一个符合条件的元素若查找成功，则返回该索引，查找不到返回-1
+// console.log(arr.findIndex(function (s) {
+//     return s.toUpperCase() === s;
+// }));//在这里没有找到全部大写的元素
+arr.forEach(console.log);
+var arr = [1, 2, 3, 4];
+arr.forEach(console.log);
