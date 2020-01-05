@@ -55,7 +55,7 @@
 // // (function (x) {
 // //     return x*x
 // // })(3);//立即执行函数
-`use strict`
+`use strict`;
 // function create_counter(initial) {
 //     var x = initial || 0;
 //     return {
@@ -69,16 +69,57 @@
 // console.log(c1.inc());
 // console.log(c1.inc());
 // console.log(c1.inc());
-function Time(n) {
-    var x = n || 0;
-    return {
-        inc:function () {
-            x += 1;
-            return x;
+// function Time(n) {
+//     var x = n || 0;
+//     return {
+//         inc:function () {
+//             x += 1;
+//             return x;
+//         }
+//     }
+// }
+// var c1 = Time();
+// console.log(c1.inc());
+// console.log(c1.inc());
+// console.log(c1.inc());//利用闭包制作一个简单计数器
+// function make_pow(n) {
+//     return function (x) {
+//         return Math.pow(x, n);//x的n次方
+//     }
+// }
+// var pow2 = make_pow(2);
+// var pow3 = make_pow(3);
+// console.log(pow2(5));
+// console.log(pow3(7));
+// function Test(n) {
+//     return function (x) {
+//         return x+n;
+//     }
+// }
+// var arr  = Test(2);
+// console.log(arr(3));//做个练习
+// function Test1(n) {
+//     return function (x) {
+//         return Math.min(n, x);//在非指定条件下，n和x位置不唯一
+//     }
+// }
+// var num = Test1(1);
+// console.log(num(2));
+var zero = function (f) {
+    return function (x) {
+        return x;
+    }
+};
+var one = function (f) {
+    return function (x) {
+        return f(x);
+    }
+};
+function add(n, m) {
+    return function (f) {
+        return function (x) {
+            return m(f)(n(f)(x));
         }
     }
 }
-var c1 = Time();
-console.log(c1.inc());
-console.log(c1.inc());
-console.log(c1.inc());
+var two = add(one,one);
