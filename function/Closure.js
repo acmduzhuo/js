@@ -123,3 +123,11 @@ function add(n, m) {
     }
 }
 var two = add(one,one);
+var three = add(one, two);
+var five = add(two, three);
+(three(function () {
+    console.log('print 3 times');
+}))();
+(five(function () {
+    console.log('print times');
+}))();
