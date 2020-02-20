@@ -38,26 +38,26 @@
 //     return x < y ? -1 : (x===y ? 1 : 0);
 // })
 // console.log(arr);
-var obj = {
-    birth:1990,
-    getAge: function (year) {
-        var b = this.birth;
-        var fn = (y) => y-this.birth;
-        return fn.call({birth: 2000}, year);
-    }
-};
-console.log(obj.getAge(2015));
-var Age = {
-    birth: 1990,
-    getAge:function () {
-        var b = this.birth;
-        var fn = () => new Date().getFullYear() - this.birth;
-        return fn();
-    }
-};
-console.log(Age.getAge());
+// var obj = {
+//     birth:1990,
+//     getAge: function (year) {
+//         var b = this.birth;
+//         var fn = (y) => y-this.birth;
+//         return fn.call({birth: 2000}, year);
+//     }
+// };
+// console.log(obj.getAge(2015));
+// var Age = {
+//     birth: 1990,
+//     getAge:function () {
+//         var b = this.birth;
+//         var fn = () => new Date().getFullYear() - this.birth;
+//         return fn();
+//     }
+// };
+// console.log(Age.getAge());
 var arr = [10, 20, 1, 2];
 arr.sort((x, y) =>{
-    return x>y ? -1 : 1;
+    return x>y ? 1 : -1;
 });
-console.log(arr.sort());
+console.log(arr);
