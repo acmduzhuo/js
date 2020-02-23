@@ -1,16 +1,30 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
-<button onclick="numbers.forEach(myFunction)">点我</button>
-<p id="demo"></p>
+<!--<button onclick="numbers.forEach(myFunction)">点我</button>-->
+<!--<p id="demo"></p>-->
+<!--<script>-->
+    <!--demoP = document.getElementById("demo");-->
+    <!--var numbers = [4, 9, 16, 25];-->
+    <!--function myFunction(item, index) {-->
+        <!--demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>";-->
+    <!--}-->
+<!--</script>-->
 <script>
-    demoP = document.getElementById("demo");
-    var numbers = [4, 9, 16, 25];
-    function myFunction(item, index) {
-        demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>";
-    }
+'use strict'
+var url = 'https://api.openweathermap.org/data/2.5/forecast?q=Taian,cn&appid=800f49846586c3ba6e7052cfc89af16c';
+$.getJSON(url, function (data) {
+var info = {
+city: data.city.name,
+weather: data.list[0].weather[0].main,
+time: data.list[0].dt_txt
+};
+alert(JSON.stringify(info, null, '  '));
+
+});
 </script>
 </body>
 </html>

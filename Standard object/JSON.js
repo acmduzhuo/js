@@ -55,15 +55,15 @@ var xiaoming = {
 //     }
 // };
 // console.log(JSON.stringify(xiaoming, null, '   ')); // '{"Name":"小明","Age":14}'
-console.log(JSON.parse('[1,2,3,true]')) // [1, 2, 3, true]
-console.log(JSON.parse('{"name":"小明","age":14}')); // Object {name: '小明', age: 14}
-console.log(JSON.parse('true')); // true
-console.log(JSON.parse('123.45'));// 123.45
-//parse变成一个JavaScript对象
-var obj = JSON.parse('{"name":"小明","age":14}', function (key, value) {
-    if (key === 'name') {
-        return value + '同学';
-    }
-    return value;
-});
-console.log(JSON.stringify(obj, null, '   ')); // {name: '小明同学', age: 14}
+// console.log(JSON.parse('[1,2,3,true]')) // [1, 2, 3, true]
+// console.log(JSON.parse('{"name":"小明","age":14}')); // Object {name: '小明', age: 14}
+// console.log(JSON.parse('true')); // true
+// console.log(JSON.parse('123.45'));// 123.45
+// //parse变成一个JavaScript对象
+// var obj = JSON.parse('{"name":"小明","age":14}', function (key, value) {
+//     if (key === 'name') {
+//         return value + '同学';
+//     }
+//     return value;
+// });
+// console.log(JSON.stringify(obj, null, '   ')); // {name: '小明同学', age: 14}
