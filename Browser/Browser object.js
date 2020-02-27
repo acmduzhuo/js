@@ -31,3 +31,4 @@
 //document
 //document对象表示当前界面，由于HTML在浏览器中以DOM形式表示为树结构，document对象就是整个DOM树的根节点
 //title 用于改变title属性
+//Cookie //获取到页面的Cookie

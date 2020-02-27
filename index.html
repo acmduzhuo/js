@@ -42,12 +42,18 @@
     var menu = document.getElementById('drink-menu');
     var drinks = document.getElementsByTagName('dt');
     var i, s;
-
     s = '提供的饮料有:';
     for (i=0; i<drinks.length; i++) {
         s = s + drinks[i].innerHTML + ',';
     }
     alert(s);
+    // var j, t;
+    // t = '提供的饮料种类有：';
+    // alert(menu);
+    // for(j=0; j<menu.length;j++){
+    //     t = t + menu[j].innerHTML + ',';
+    // }
+    //alert(t);//GG 获取到的memu是空
 </script>
 </body>
 </html>
