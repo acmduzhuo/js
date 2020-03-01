@@ -26,3 +26,32 @@ input.value = 'test@example.com'; // 文本框的内容已更新
 //<input type="color" value="#ff0000">
 
 //提交表单
+{/*<form id="test-register" action="#" target="_blank" onSubmit="return checkRegisterForm()">*/}
+    {/*<p id="test-error" style="color:red"></p>*/}
+    {/*<p>*/}
+        {/*用户名: <input type="text" id="username" name="username">*/}
+    {/*</p>*/}
+    {/*<p>*/}
+        {/*口令: <input type="password" id="password" name="password">*/}
+    {/*</p>*/}
+    {/*<p>*/}
+        {/*重复口令: <input type="password" id="password-2">*/}
+    {/*</p>*/}
+    {/*<p>*/}
+        {/*<button type="submit">提交</button>*/}
+        {/*<button type="reset">重置</button>*/}
+    {/*</p>*/}
+{/*</form>*/}
+<script>
+    var
+    username = document.getElementById('username');
+    pw = document.getElementById('password');
+    pw1 = document.getElementById('password-2');
+    a = /[\w{3,10}]/;
+    b = /[.{6,20}]/;
+    if(a.test(username.value)&&b.test(pw)&&b.test(pw1)&&pw.value === pw1.value)){
+    alert('True!');
+}else{
+    alert('False!');
+}
+</script>
