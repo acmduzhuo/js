@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>简单的天气查询</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 <body>
 <!--<input type="text" id="email">-->
@@ -67,49 +65,36 @@
         <!--return false;-->
     <!--}-->
 <!--</script>-->
-<p>输入当前城市:<input type="text" id="city"></p>
-<button type="submit" onclick="getWeather()">查询</button>
-<p id="weatherInfo">所查询的信息为：</p>
-<script>
-    function getWeather(){
-        let url = 'https://api.openweathermap.org/data/2.5/forecast?q=Beijing,cn&appid=800f49846586c3ba6e7052cfc89af16c';
-        let city = document.getElementById('city');
-        //let newURL = url + city.value;
-        let newURL = 'https://api.openweathermap.org/data/2.5/forecast?q=Beijing,cn&appid=800f49846586c3ba6e7052cfc89af16c';
-        console.log(newURL);
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState === 4){
-                if(xhr.status === 200){
-                    return success(xhr.responseText);
-                }else{
-                    alert("!"+ xhr.status);
-                }
-            }else{
-                alert(xhr.readyState);
+<div style="width:1000px;margin:100px auto;">
+    <h1>天气查询</h1>
+    <input    type="text" placeholder="请输出你的地址" id="tel"/>
+    <button id="ajax">确定</button>
+    <p><span id="reslut"></span></p>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#ajax').click(function() {
+            var $reslutval = $('#tel').val();
+            if($reslutval == '') {
+                alert('内容不能为空！');
+                return;
             }
-        }
-        xhr.open('GET',newURL);
-        xhr.send();
-    }
-
-    function success(data){
-        let weather = document.getElementById('weatherInfo');
-        let weatherInfo = JSON.parse(data);
-        if(5>1){
-            weather.innerHTML = '查询成功' + '<br>'+
-                '当前城市：'+weatherInfo.data.city.name+ '<br>'+
-                '天气：'+weatherInfo.data.list[0].weather[0].main
-                // '气温：'+'最'+weatherInfo.data.forecast[0].high +'，最'+weatherInfo.data.forecast[0].low+'<br>'+
-                // '天气：'+weatherInfo.data.forecast[0].type+'<br>'+
-                // '风向：'+weatherInfo.data.forecast[0].fengxiang + weatherInfo.data.forecast[0].fengli+'<br>' +
-                // '注意：'+weatherInfo.data.ganmao
-            weather.innerText  = weatherInfo.innerHTML;
-            //alert(weatherInfo.innerHTML);
-        }else{
-            weather.innerText  = 'false';
-        }
-    }
+            $.ajax({
+                type: 'GET',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                jsonpcallback: 'getName',
+                url: 'http://api.asilu.com/weather/', //天气查询api
+                data: {
+                    'city': $reslutval
+                },
+                success: function(data) {
+                    var reslutData = data;
+                    $('#reslut').text('你查询的是：' + reslutData.city + "," + "明天的天气是：" + reslutData.weather[0].weather + ',' + "今天是" + reslutData.weather[0].date + ',' + '温度：' + reslutData.weather[0].temp);
+                },
+            })
+        })
 </script>
 </body>
 </html>
