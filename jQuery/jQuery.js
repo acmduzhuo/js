@@ -14,4 +14,20 @@ var a = $('.red.green'); // 注意没有空格！
 // 符合条件的节点：
 // <div class="red green">...</div>
 // <div class="blue green red">...</div>
-var a = $('[name=email]');
+//按属性查找
+var a = $('[name=email]');//找出<name="email">
+var icons = $('[name^=icon]');//s所有name属性值以icon开头的DOM，例如: name="icon-1", name="icon-2"
+var name = $('[name$=with]');// 找出所有name属性值以with结尾的DOM,name="startswith", name="endswith"
+var icons = $([name$="icon-"]);//找出所有class包含至少一个以'icon-'开头的DOM，例如: class="icon-clock", class="abc icon-home"
+//组合查找
+var email = $('input[name=email]');//只会找出<input name="email">
+var tr = $('tr.red');//只会查找到<tr class="red"></tr>
+//多项选择器
+$('p,div')//把<p>和<div>都选出来
+$('p.red,p.green')//把<p class="red">和<p class="green>都选出来
+selected = $(#'para-1');
+selected = $('.color-red.color-green');
+selected = $('.color-red');
+selected = $('[class^=color-]');
+selected = $('input(name=name)');
+selected = $('input(name=name),input(name=email)');
