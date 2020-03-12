@@ -20,7 +20,7 @@ $('ul.lang li');//可以确定的三个节点
 $('ul.lang li:first-child');//仅选出JavaScript
 $('ul.lang li:nth-child(2)'); // 选出第N个元素，N从1开始
 $('ul.lang li:nth-child(even)'); // 选出序号为偶数的元素
-$('ul.lang li:nth-child(odd)'); // 选出序号为奇数的元素
+$('ul.lang li:nth-child(odd)');// 选出序号为奇数的元素
 //表单相关
 :input//可以选择<input>,<textarea>,<select>,<button>
 :file//可以选择<input type="file">,同input[type=file]
