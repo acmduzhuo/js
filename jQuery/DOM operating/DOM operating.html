@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title>DOM</title>
+</head>
+<body>
+<!--<ul id="test-ul">-->
+    <!--<li class="js">JavaScript</li>-->
+    <!--<li name="book">Java &amp; JavaScript</li>-->
+    <!--<li class="python">Python</li>-->
+<!--</ul>-->
+<ul id="test-css" style="color: red">
+    <li class="lang dy"><span>JavaScript</span></li>
+    <li class="lang"><span>Java</span></li>
+    <li class="lang dy"><span>Python</span></li>
+    <li class="lang"><span>Swift</span></li>
+    <li class="lang dy"><span>Scheme</span></li>
+</ul>
+<script>
+    // var j1 = $('#test-ul li.js');
+    // var j2 = $('#test-ul li[name=book]');
+    // j1.html('<span style="color:red">JavaScript</span>');
+    // j2.text('Java EMAJavaScript');
+    // var arr = $('#test-ul');
+    // arr.text('JS');
+</script>
+<!--<script>-->
+    <!--var arr = $('#test-css li.dy>span').css('background-color', '#ffd351').css('color', 'red');-->
+<!--</script>-->
+<script>
+    var f1 = $('#test-css');
+    alert(f1.css('color'));
+</script>
+</body>
+</html>
