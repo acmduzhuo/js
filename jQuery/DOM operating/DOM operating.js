@@ -38,3 +38,4 @@ div.attr('data');//不存在该属性
 div.attr('name');//'Test'
 div.attr('name', 'Hello')//div的name属性
 div.removeAttr('name')//删除name属性
+div('name')
