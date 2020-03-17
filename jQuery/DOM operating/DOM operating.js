@@ -38,4 +38,33 @@ div.attr('data');//不存在该属性
 div.attr('name');//'Test'
 div.attr('name', 'Hello')//div的name属性
 div.removeAttr('name')//删除name属性
-div('name')
+div.attr('name');//undefined
+{/*<input id="test-radio" type="radio" name="test" checked value="1">*/}
+{/*<input id="test-radio" type="radio" name="test" checked="checked" value="1">*/}
+//H5规定有一种属性在DOM中可以没有属性，只有存在与否，如checked、selected，使用prop即可处理
+var radio = $('#test-radio');
+    radio.attr('checked');//checked
+    radio.prop('checked');//true
+var radio = $('#test-radio');
+radio.is(':checked');//true
+//操作表单，对于表单元素，jQuery对象统一提供了val()方法获取和设置对应的value属性
+
+/*
+    <input id="test-input" name="email" value="">
+    <select id="test-select" name="city">
+        <option value="BJ" selected>Beijing</option>
+        <option value="SH">Shanghai</option>
+        <option value="SZ">Shenzhen</option>
+    </select>
+    <textarea id="test-textarea">Hello</textarea>
+*/
+var
+    input = $('#test-input'),
+    select = $('#test-select'),
+    textarea = $('#test-textarea');
+input.val(); // 'test'
+input.val('abc@example.com'); // 文本框的内容已变为abc@example.com
+select.val(); // 'BJ'
+select.val('SH'); // 选择框已变为Shanghai
+textarea.val(); // 'Hello'
+textarea.val('Hi'); // 文本区域已更新为'Hi'

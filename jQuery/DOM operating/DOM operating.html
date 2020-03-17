@@ -11,13 +11,13 @@
     <!--<li name="book">Java &amp; JavaScript</li>-->
     <!--<li class="python">Python</li>-->
 <!--</ul>-->
-<ul id="test-css" style="color: red">
-    <li class="lang dy"><span>JavaScript</span></li>
-    <li class="lang"><span>Java</span></li>
-    <li class="lang dy"><span>Python</span></li>
-    <li class="lang"><span>Swift</span></li>
-    <li class="lang dy"><span>Scheme</span></li>
-</ul>
+<input id="test-input" name="email" value="">
+<select id="test-select" name="city">
+    <option value="BJ" selected>Beijing</option>
+    <option value="SH">Shanghai</option>
+    <option value="SZ">Shenzhen</option>
+</select>
+<!--<textarea id="test-textarea">Hello</textarea>-->
 <script>
     // var j1 = $('#test-ul li.js');
     // var j2 = $('#test-ul li[name=book]');
@@ -30,8 +30,12 @@
     <!--var arr = $('#test-css li.dy>span').css('background-color', '#ffd351').css('color', 'red');-->
 <!--</script>-->
 <script>
-    var f1 = $('#test-css');
-    alert(f1.css('color'));
+    // var f1 = $('#test-css');
+    // alert(f1.css('color'));
+    var
+        input = $('#test-input'),
+        select = $('#test-select'),
+        textarea = $('test-textarea');
 </script>
 </body>
 </html>
