@@ -6,42 +6,52 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-<form id="test-form" action="#0" onsubmit="return false;">
-    <p><label>Name: <input name="name"></label></p>
-    <p><label>Email: <input name="email"></label></p>
-    <p><label>Password: <input name="password" type="password"></label></p>
-    <p>Gender: <label><input name="gender" type="radio" value="m" checked> Male</label> <label><input name="gender" type="radio" value="f"> Female</label></p>
-    <p><label>City: <select name="city">
-        <option value="BJ" selected>Beijing</option>
-        <option value="SH">Shanghai</option>
-        <option value="CD">Chengdu</option>
-        <option value="XM">Xiamen</option>
-    </select></label></p>
-    <p><button type="submit">Submit</button></p>
-</form>
+<a id="test-link" href="#0">点我试试</a>
 <script type="text/javascript">
-    json = {};
-    json.name = $('input[name=name]')[0].value;
-    json.email = $('input[name=email]')[0].value;
-    json.password = $('input[name=password]')[0].value;
-    json.gender = $('input[name=gender]').filter(function () {
-        return this.checked;
-    })[0].value === 'm' ? 'Male' : 'Female';
-    json.city = $('select[name=city] option').filter(function () {
-        return this.selected;
-    })[0].innerText;
-    json = JSON.stringify(json, null, ' ');
-    alert(json);
+    var a = $('#test-link');
+    a.hover(function () {
+        alert('Hello!');
+    },function () {
+        alert('Hi!');
+        }
+    )
 </script>
-<script>
-    var json={};
-    $('#test-form :input').not('button').filter(function(){
-        return this.type!=='radio'||this.checked;
-    }).map(function(){
-        return json[this.name]=this.value;
-    }).get();
-    json=JSON.stringify(json,null, ' ');
-    alert(json);
-</script>
+<!--<form id="test-form" action="#0" onsubmit="return false;">-->
+    <!--<p><label>Name: <input name="name"></label></p>-->
+    <!--<p><label>Email: <input name="email"></label></p>-->
+    <!--<p><label>Password: <input name="password" type="password"></label></p>-->
+    <!--<p>Gender: <label><input name="gender" type="radio" value="m" checked> Male</label> <label><input name="gender" type="radio" value="f"> Female</label></p>-->
+    <!--<p><label>City: <select name="city">-->
+        <!--<option value="BJ" selected>Beijing</option>-->
+        <!--<option value="SH">Shanghai</option>-->
+        <!--<option value="CD">Chengdu</option>-->
+        <!--<option value="XM">Xiamen</option>-->
+    <!--</select></label></p>-->
+    <!--<p><button type="submit">Submit</button></p>-->
+<!--</form>-->
+<!--<script type="text/javascript">-->
+    <!--json = {};-->
+    <!--json.name = $('input[name=name]')[0].value;-->
+    <!--json.email = $('input[name=email]')[0].value;-->
+    <!--json.password = $('input[name=password]')[0].value;-->
+    <!--json.gender = $('input[name=gender]').filter(function () {-->
+        <!--return this.checked;-->
+    <!--})[0].value === 'm' ? 'Male' : 'Female';-->
+    <!--json.city = $('select[name=city] option').filter(function () {-->
+        <!--return this.selected;-->
+    <!--})[0].innerText;-->
+    <!--json = JSON.stringify(json, null, ' ');-->
+    <!--alert(json);-->
+<!--</script>-->
+<!--<script>-->
+    <!--var json={};-->
+    <!--$('#test-form :input').not('button').filter(function(){-->
+        <!--return this.type!=='radio'||this.checked;-->
+    <!--}).map(function(){-->
+        <!--return json[this.name]=this.value;-->
+    <!--}).get();-->
+    <!--json=JSON.stringify(json,null, ' ');-->
+    <!--alert(json);-->
+<!--</script>-->
 </body>
 </html>
