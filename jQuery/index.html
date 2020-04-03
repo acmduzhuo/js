@@ -23,21 +23,52 @@
     <!--</script>-->
 </head>
 <body>
+<p>这是一个段落</p>
+<button class="btn1">左上角隐藏</button>
+<button class="btn2">左上角显示</button>
+<button class="btn3">反选</button>
+<button class="btn4">垂直收缩</button>
+<button class="btn5">垂直展开</button>
+<script>
+    var b1 = $('.btn1');
+    var b2 = $('.btn2');
+    var b3 = $('.btn3');
+    var b4 = $('.btn4');
+    var b5 = $('.btn5');
+    var p = $("p");
+    $(document).ready(function () {
+        b1.click(function () {
+            p.hide('fast');
+        });
+        b2.click(function () {
+            p.show('slow');
+        });
+        b3.click(function () {
+            p.slideToggle('show');
+        });
+        b4.click(function () {
+            p.slideUp('show');
+        });
+        b5.click(function () {
+            p.slideDown('show');
+        });
+    });
+</script>
 <!--<input id="test-input">-->
 <!--<p>点击这个段落修改它的背景颜色。</p>-->
 <!--<p>点击一下按钮再点击这个段落( click 事件被移除 )。</p>-->
 
 <!--<button>移除 click 事件句柄</button>-->
-<a id="test-link" href="#0">点我试试</a>
-<script type="text/javascript">
-    var a = $('#test-link');
-    a.focus(function () {
-        alert('Hello!');
-    })
-    $(function () {
-        window.open('/');
-    });
-</script>
+<!--<a id="test-link" href="#0">点我试试</a>-->
+<!--<script type="text/javascript">-->
+<!--    var a = $('#test-link');-->
+<!--    a.focus(function () {-->
+<!--        alert('Hello!');-->
+<!--    })-->
+<!--    $(function () {-->
+<!--        window.open('/');-->
+<!--    });-->
+<!--</script>-->
 <!--<input id="test-form">-->
 <!--<script type="text/javascript">-->
     <!--var arr = $('#test-form');-->
