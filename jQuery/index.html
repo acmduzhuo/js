@@ -29,12 +29,24 @@
 <button class="btn3">反选</button>
 <button class="btn4">垂直收缩</button>
 <button class="btn5">垂直展开</button>
+<button class="btn6">反选</button>
+<button class="btn7">淡入</button>
+<button class="btn8">淡出</button>
+<button class="btn9">反选</button>
+<button class="btn10">自定义动画</button>
+<button class="btn11">串行动画</button>
 <script>
     var b1 = $('.btn1');
     var b2 = $('.btn2');
     var b3 = $('.btn3');
     var b4 = $('.btn4');
     var b5 = $('.btn5');
+    var b6 = $('.btn6');
+    var b7 = $('.btn7');
+    var b8 = $('.btn8');
+    var b9 = $('.btn9');
+    var b10 = $('.btn10');
+    var b11 = $('.btn11');
     var p = $("p");
     $(document).ready(function () {
         b1.click(function () {
@@ -44,13 +56,48 @@
             p.show('slow');
         });
         b3.click(function () {
-            p.slideToggle('show');
+            p.toggle('show');
         });
         b4.click(function () {
             p.slideUp('show');
         });
         b5.click(function () {
             p.slideDown('show');
+        });
+        b6.click(function () {
+            p.slideToggle('show');
+        });
+        b7.click(function () {
+            p.fadeIn('show');
+        });
+        b8.click(function () {
+            p.fadeOut('show');
+        });
+        b9.click(function () {
+            p.fadeToggle('show');
+        });
+        b10.click(function () {
+            p.animate({
+                opacity:0.25,
+                width:'256px',
+                height:'256px'
+            }, 3000, function () {
+                console.log('动画已结束');
+                $(this).css('opacity', '1.0').css('width', '128px').css('height', '128px');
+            });
+        });
+        b11.click(function () {
+            p.slideDown(2000)
+                .delay(1000)
+                .animate({
+                    width:'256px',
+                    height:'256px'
+                }, 2000)
+                .delay(1000)
+                .animate({
+                    width:'128px',
+                    height:'128px'
+                }, 2000);
         });
     });
 </script>
