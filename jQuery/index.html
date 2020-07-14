@@ -35,7 +35,21 @@
 <button class="btn9">反选</button>
 <button class="btn10">自定义动画</button>
 <button class="btn11">串行动画</button>
+<div id="test-highlight1">
+    <p>什么是<span>jQuery</span> <span>Plugin</span></p>
+    <p>编写<span>jQuery</span> <span>Plugin</span>可以用来扩展<span>jQuery</span>的功能。</p>
+</div>
 <script>
+    $.fn.highlight1 = function (options) {
+        var bgcolor = options && options.backgroundColor || '#FFFF00';
+        var color = options && options.color || '#d85030';
+        this.css('backgroundColor', bgcolor).css('color', color);
+        return this;
+    };
+    $('#test-highlight1 span').highlight1({
+        backgroundColor: '',
+        color: ''
+    });
     var b1 = $('.btn1');
     var b2 = $('.btn2');
     var b3 = $('.btn3');
@@ -100,6 +114,9 @@
                 }, 2000);
         });
     });
+</script>
+<script>
+    alert('Hello,World!');
 </script>
 <!--<input id="test-input">-->
 <!--<p>点击这个段落修改它的背景颜色。</p>-->
