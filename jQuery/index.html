@@ -39,17 +39,21 @@
     <p>什么是<span>jQuery</span> <span>Plugin</span></p>
     <p>编写<span>jQuery</span> <span>Plugin</span>可以用来扩展<span>jQuery</span>的功能。</p>
 </div>
+<button class="btn12">this</button>
 <script>
-    $.fn.highlight1 = function (options) {
-        var bgcolor = options && options.backgroundColor || '#FFFF00';
-        var color = options && options.color || '#d85030';
-        this.css('backgroundColor', bgcolor).css('color', color);
+    $(document).ready(function(){
+        $(".btn12").hover(function(){
+            $(".btn12").css("background-color","#00BBFF");
+        },function(){
+            $(".btn12").css("background-color","#0066FF");
+        });
+    });
+    $.fn.highlight1 = function () {
+        // this已绑定为当前jQuery对象:
+        this.css('backgroundColor', '#fffceb').css('color', '#0000FF');
         return this;
     };
-    $('#test-highlight1 span').highlight1({
-        backgroundColor: '',
-        color: ''
-    });
+    $('#test-highlight1 span').highlight1();
     var b1 = $('.btn1');
     var b2 = $('.btn2');
     var b3 = $('.btn3');
