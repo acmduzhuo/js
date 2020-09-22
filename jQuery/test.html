@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉菜单</title>
+    <style>
+        html , body , ul , ol{
+            padding: 0;
+            margin: 0;
+        }
+        ul , ol{
+            list-style: none;
+        }
+        .first-list{
+            width: 180px;
+            float: left;
+            margin-right: 50px;
+
+        }
+        .first-list  > li{
+            width: 180px;
+
+        }
+        .first-list  > li .tab-item{
+            width: 180px;
+            height: 40px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 40px;
+            color: #ffffff;
+        }
+        .first-list  > li .second-list{
+            width: 180px;
+            margin-left: 20px;
+            margin-top: -10px;
+            display: none;
+        }
+        .first-list  > li .second-list li{
+            width: 180px;
+            height: 40px;
+            background-color: orange;
+            border-bottom: 1px solid red;
+            text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul id="first-list" class="first-list">
+        <li>
+            <div class="tab-item">一级菜单</div>
+               <ol id="second-list" class="second-list">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ol>
+            </li>
+    </ul>
+</div>
+
+
+<script>
+    var items = document.getElementsByClassName("tab-item");
+    var menus = document.getElementsByClassName("second-list");
+    for(var i = 0 ; i <items.length ; i++){
+        items[i].index = i;
+        items[i].onmouseenter = function(){
+            for(var j = 0 ; j < items.length ; j++){
+                menus[j].style.display = "none";
+            }
+            menus[this.index].style.display = "block";
+        };
+        items[i].parentElement.onmouseleave = function(){
+            for(var k = 0 ; k < items.length ; k++){
+                menus[k].style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>

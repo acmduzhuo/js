@@ -57,10 +57,39 @@
 // var re1 = /^(\d+?)(0*)$/;//?消除贪婪匹配
 // console.log(re1.exec('1023000'));// '1023000','1023', '000', index: 0, input: '1023000',groups: undefined
 //全局匹配
-var r1 = /test/g;
-var s = 'JavaScript, VBScript, JScript and ECMAScript';
-var re=/[a-zA-Z]+Script/g;
-console.log(re.exec(s)); // ['JavaScript']
-console.log(re.lastIndex);//10当我们指定g标志后，每次运行exec()，正则表达式本身会更新lastIndex属性，表示上次匹配到的最后索引：
-console.log(re.exec(s)); // [ 'VBScript']
-console.log(re.lastIndex);//全局匹配类似搜索，因此不能使用/^...$/，那样只会最多匹配一次。
+// var r1 = /test/g;
+// var s = 'JavaScript, VBScript, JScript and ECMAScript';
+// var re=/[a-zA-Z]+Script/g;
+// console.log(re.exec(s)); // ['JavaScript']
+// console.log(re.lastIndex);//10当我们指定g标志后，每次运行exec()，正则表达式本身会更新lastIndex属性，表示上次匹配到的最后索引：
+// console.log(re.exec(s)); // [ 'VBScript']
+// console.log(re.lastIndex);//全局匹配类似搜索，因此不能使用/^...$/，那样只会最多匹配一次。
+
+// var re = null, i;
+// for(i = 0;i < 10;i++){
+//     re = /cat/g;
+//     console.log(i);
+//     console.log(re.test("catastrophe"));
+//     console.log(RegExp.rightContext);
+// }
+// for(i = 0;i < 10;i++){
+//     re = new RegExp("cat", "g");
+//     console.log(i);
+//     console.log(re.test("catastrophe"));
+// }
+
+var re = null;
+
+/* 由于实例属性不会重置，第一次调用 test 找到了 “cat”，第二次调用是从索引为3的字符开始，直至字符串结尾，第三次调用则从开头开始。 */
+/* true false true false...*/
+for (let i = 0; i < 10; i++) {
+    re = /cat/g;
+    console.log(re.test("catastrophe"));
+}
+
+/* 使用RegExp构造函数创建正则表达式，每次迭代都会产生一个新的RegExp实例，所以结果都为true。 */
+/* true true true true...*/
+for (i = 0; i < 10; i++) {
+    re = new RegExp("cat", "g");
+    re.test("catastrophe");
+}
